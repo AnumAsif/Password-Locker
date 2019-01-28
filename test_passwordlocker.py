@@ -46,33 +46,7 @@ class TestUser(unittest.TestCase):
         self.new_credential.save_credential()
         self.assertEqual(len(Credential.credential_list),1)
 
-    def test_save_multiple_credential(self):
-        '''
-        test case to check if we can save multiple credential objects to the credential list
-        '''
-        self.new_credential.save_credential()
-        test_credential = Credential("anum","Instagram","anumasif","fdsf134csd")
-        test_credential.save_credential()
-        self.assertEqual(len(Credential.credential_list),2)
-
-    def test_check_user(self):
-        '''
-        test case to check if the user exists
-        '''
-        self.new_user.save_user()
-        test_user= User("sana","sana12345")
-        test_user.save_user()
-        self.assertEqual(test_user.username,"sana")
-
-    def test_credential_exist(self):
-        '''
-        test case to check if the credential exists
-        '''
-        self.new_credential.save_credential()
-        test_credential = Credential("anum","Instagram","anumasif","fdsf134csd")
-        test_credential.save_credential()
-        self.assertTrue(Credential.credential_exist("Instagram"))
-
+    
 
 
 if __name__ == '__main__':
