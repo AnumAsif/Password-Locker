@@ -59,20 +59,8 @@ class Credential():
         delete_credential method deletes saved credentials of an account
         """
         Credential.credential_list.remove(self)
-    
-    @classmethod
-    def find_credential(cls,site_name):
-        """
-        Method that takes in a name and returns credentials that matches that nameself.
 
-        Args:
-            accountFor: Name for which account has been created
-        Returns :
-            Credentials that matches the name
-        """
-        for credential in cls.credential_list:
-            if credential.site_name == site_name:
-                return credential
+    
     @classmethod
     def credential_exist(cls,site_name):
         """
