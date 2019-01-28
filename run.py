@@ -91,17 +91,7 @@ def main():
                         site_name = input("Enter the site name for which you want to create a credential")
                         account_name = input("Enter username for the site")
                         print("Do you want to autogenerate password. If yes, press 'Y' else press 'N'")
-                        while True:
-                            answer = input().lower();
-                            if answer == 'y':
-                                accountPassword = Credential.generate_password()
-                                break
-                            elif answer == 'n':
-                                print("Enter the password for the account:")
-                                accountPassword = input()
-                                break
-                            else:
-                                print("Unable to understand. Type again")
+                        
                         Credential.save_credential(create_credential(username, site_name, account_name,accountPassword))
                     elif short_c_code == 'dl':
                         site_name = input("Enter the site name whose credentials you want to delete")
