@@ -59,12 +59,7 @@ class Credential():
         delete_credential method deletes saved credentials of an account
         """
         Credential.credential_list.remove(self)
-    def generate_password():
-        chars = "abcdefghijklmnopqrstuvwxyz0123456789"
-        password = ""
-        for i in range(10):
-            password+=random.choice(chars)
-        return password
+    
     @classmethod
     def find_credential(cls,site_name):
         """
