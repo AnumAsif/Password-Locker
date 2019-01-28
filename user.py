@@ -86,12 +86,4 @@ class Credential():
             if credential.site_name == site_name:
                 return True
         return False
-    @classmethod
-    def display_credentials(cls, user_name):
-        '''
-        Function that returns all the saved credentials
-        '''
-        for credential in cls.credential_list:
-            if credential.user_name == user_name:
-                cls.user_credential_list.append(credential)
-        return cls.user_credential_list
+    
