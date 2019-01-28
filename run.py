@@ -55,6 +55,83 @@ def display_credentials(user_name):
     """
     return Credential.display_credentials(user_name)
 
+def main():
+    print("Hello Welcome to your Password Locker. What is your name?")
+    user_name = input()
+    print(f"Hello {user_name}. What would you like to do?")
+    # print( f"Hello {user_name}. What would you like to do?")
+    print('\n')
+    while True:
+        print("Use these short codes:'ca'- create an account, 'li'- login to an account, 'ex'- exit an account" )
+        short_code = input().lower().strip()
+        if short_code == 'ca':
+            print("New User")
+            print("-"*30)
+
+            print("Enter username ........")
+            username = input()
+
+            print("Enter Password.........")
+            password= input()
+            save_user(create_user(username,password))
+            print('\n')
+            print(f"Your account with username:{username} and password:{password} has been created")
+            print('\n')
+
+        elif  short_code == 'li':
+
+            username = input("Enter your username")
+            password = input("Enter your password")
+            if check_user(username,password) == username:
+                print("What would you like to do?")
+                while True:
+                    print("Use these shord codes: 'cc'-create a credential, 'dl'-delete a credential, 'fc'-find a credential, 'dc'-display credentials, 'lo' -logout ")
+                    short_c_code = input().lower()
+                    if short_c_code == 'cc':
+                        site_name = input("Enter the site name for which you want to create a credential")
+                        account_name = input("Enter username for the site")
+                        print("Do you want to autogenerate password. If yes, press 'Y' else press 'N'")
+                        while True:
+                            answer = input().lower();
+                            if answer == 'y':
+                                accountPassword = Credential.generate_password()
+                                break
+                            elif answer == 'n':
+                                print("Enter the password for the account:")
+                                accountPassword = input()
+                                break
+                            else:
+                                print("Unable to understand. Type again")
+                        Credential.save_credential(create_credential(username, site_name, account_name,accountPassword))
+                    elif short_c_code == 'dl':
+                        site_name = input("Enter the site name whose credentials you want to delete")
+                        if(check_existing_credential(site_name)== False):
+                            print("Credentials for this site doesnot exist")
+                        else:
+                            del_credential(find_credential(site_name))
+                            print(f"Credentials for {site_name} has been deleted")
+                    elif short_c_code == 'dc':
+                        user_credential_list = display_credentials(username)
+                        for credential in user_credential_list:
+                            print(f"site name:{credential.site_name} account-name:{credential.account_name} password:{credential.account_password}")
+                            print('\n')
+                        user_credential_list = []
+                    elif short_c_code == 'lo':
+                        print("Bye! Dont forget to add credentials for a new site!")
+                    else:
+                        print('Oops! Wrong option entered. Try again.')
+            else:
+                print("No user with this username exist. Please create a new account or exit")
+
+        elif short_code == 'ex':
+			        break
+
+        else:
+            print("-"*60)
+            print(' ')
+            print("Oops! Wrong option entered. Try again.")
+
+
 
 
 
