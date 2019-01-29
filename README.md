@@ -8,35 +8,39 @@ This application is developed to allow a user to save it's credentials for vario
 ### Application:
 1. display an option to create an account
    - INPUT:"ca"
-   - OUTPUT:An account created with inputted username and password 
+   - OUTPUT:An account created with inputted username and password
 2. User is logged into the application by entering username and password
    - INPUT:"li"
    - OUTPUT:"logins to the user account providing more options for navigation"
 3. add a credential with user name, site name, account name and password
-   - INPUT:"cc" 
-   - OUTPUT:"User credential is created with the inputted required values" 
+   - INPUT:"cc"
+   - OUTPUT:"User credential is created with the inputted required values"
 4. delete a credential of a user for a particular site
-   - INPUT:"dl" 
+   - INPUT:"dl"
    - OUTPUT:"User credential of the site name entered is deleted"
 5. displays all credentials of a user
    - INPUT:"selected dc from the displayed codes of navigation"
    - OUTPUT:"All saved credentials of a user"
 6. displays an error message if the username and password entered doesn't exist
-   - INPUT:"li" 
+   - INPUT:"li"
    - OUTPUT:"This username doesnot exist"
 7. displays a goodbye message and exit
    - INPUT:"ex
-   - OUTPUT:"Don't forget to add a credential for a new site" 
+   - OUTPUT:"Don't forget to add a credential for a new site"
 
 ## Setup/Installation Requirements
 * python3.6
 * pip
+## Running the Application
+   * To run the application, in your terminal:
 
+    $ chmod +x PasswordLocker.py
+    $ ./PasswordLocker.py
 ## Testing the Application
    * To run the tests for the class file:
-	
+
     $ python3.6 test_passwordlocker.py
-		
+
 ### Development
 Want to contribute? Great!
 
@@ -48,17 +52,16 @@ To fix a bug or enhance an existing module, follow these steps:
 - Add changes to reflect the changes made
 - Commit your changes (`git commit -am 'Improve feature'`)
 - Push to the branch (`git push origin improve-feature`)
-- Create a Pull Request 
+- Create a Pull Request
 ## Known Bugs
 If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/AnumAsif/Password-Locker/issues/new) by including your search query and the expected result.
 
 If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/AnumAsif/Password-Locker/issues/new). Please include sample queries and their corresponding results.
 ## Technologies Used
-- This project was generated with [Python3.6](https://devdocs.io/python~3.6/) 
+- This project was generated with [Python3.6](https://devdocs.io/python~3.6/)
 ## Support and contact details
 Please feel free to contact me if you have any suggestion for me to improve this website.
 - Email: anum@cockar.com
 ### License
 *MIT*
 Copyright (c) 2018 **ANUM ASIF**
-
