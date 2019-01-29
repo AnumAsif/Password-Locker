@@ -18,16 +18,19 @@ class User:
         '''
         self.username = username
         self.password = password
+
     def save_user(self):
         """
         save_user method saves a user in user_list[]
         """
         User.user_list.append(self)
+
     @classmethod
     def check_user(cls, username, password):
         for user in cls.user_list:
             if user.username == username and user.password == password:
                 return user.username
+
 class Credential():
     """
     Class that generates an instance of a new credential of
@@ -54,11 +57,19 @@ class Credential():
         save_credential method saves credential objects into credential_list
         """
         Credential.credential_list.append(self)
+
     def delete_credential(self):
         """
         delete_credential method deletes saved credentials of an account
         """
         Credential.credential_list.remove(self)
+
+    def generate_password():
+        chars = "abcdefghijklmnopqrstuvwxyz0123456789"
+        password = ""
+        for i in range(10):
+            password+=random.choice(chars)
+        return password
 
     @classmethod
     def find_credential(cls,site_name):
@@ -73,6 +84,7 @@ class Credential():
         for credential in cls.credential_list:
             if credential.site_name == site_name:
                 return credential
+
     @classmethod
     def credential_exist(cls,site_name):
         """
@@ -86,4 +98,13 @@ class Credential():
             if credential.site_name == site_name:
                 return True
         return False
-    
+
+    @classmethod
+    def display_credentials(cls, user_name):
+        '''
+        Function that returns all the saved credentials
+        '''
+        for credential in cls.credential_list:
+            if credential.user_name == user_name:
+                cls.user_credential_list.append(credential)
+        return cls.user_credential_list
