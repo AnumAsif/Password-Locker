@@ -35,7 +35,7 @@ This application is developed to allow a user to save it's credentials for vario
 ## Testing the Application
    * To run the tests for the class file:
 	
-     |  $ python3.6 test_passwordlocker.py
+    $ python3.6 test_passwordlocker.py
 		
 ### Development
 Want to contribute? Great!
