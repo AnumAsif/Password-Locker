@@ -64,6 +64,31 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.assertEqual(test_user.username,"sana")
 
+    def test_delete_credential(self):
+        '''
+        test case to check if an unwanted credential is deleted
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential("anum","Instagram","anumasif","fdsf134csd")
+        test_credential.save_credential()
+        test_credential.delete_credential()
+        self.assertEqual(len(Credential.credential_list),1)
+
+    def test_generate_password(self):
+        '''
+        test case to check if the password is generated
+        '''
+        self.assertTrue(Credential.generate_password())
+
+    def test_find_credential(self):
+        '''
+        test case to find credential of a particular site
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential("anum","Instagram","anumasif","fdsf134csd")
+        test_credential.save_credential()
+        self.assertEqual(Credential.find_credential("Instagram"),test_credential)
+
     def test_credential_exist(self):
         '''
         test case to check if the credential exists
@@ -72,6 +97,15 @@ class TestUser(unittest.TestCase):
         test_credential = Credential("anum","Instagram","anumasif","fdsf134csd")
         test_credential.save_credential()
         self.assertTrue(Credential.credential_exist("Instagram"))
+
+    def test_display_credentials(self):
+        '''
+        test case to check if the function return the credential list of user
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential("anum","Instagram","anumasif","fdsf134csd")
+        test_credential.save_credential()
+        self.assertEqual(len(Credential.display_credentials("anum")),2)
 
 
 

@@ -102,7 +102,11 @@ class Credential():
     @classmethod
     def display_credentials(cls, user_name):
         '''
-        Function that returns all the saved credentials
+        Function that returns all the saved credentials ofa user
+        Args:
+            user name whose credentials will be displayed
+        Return:
+            A list containing credentials of that user
         '''
         for credential in cls.credential_list:
             if credential.user_name == user_name:
