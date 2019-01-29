@@ -31,19 +31,12 @@ This application is developed to allow a user to save it's credentials for vario
 ## Setup/Installation Requirements
 * python3.6
 * pip
-## Running the Application
-   * To run the application, in your terminal:
 
-	```
-	$ chmod +x password_locker.py
-  	$ ./password_locker.py
-	```
 ## Testing the Application
    * To run the tests for the class file:
-
-	```
-	$ python3.6 user_credentials_test.py
-	```	
+	
+     |  $ python3.6 test_passwordlocker.py
+		
 ### Development
 Want to contribute? Great!
 
