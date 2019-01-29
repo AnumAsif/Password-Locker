@@ -34,8 +34,8 @@ This application is developed to allow a user to save it's credentials for vario
 ## Running the Application
    * To run the application, in your terminal:
 
-    $ chmod +x PasswordLocker.py
-    $ ./PasswordLocker.py
+    $ chmod +x Password-Locker.py
+    $ ./Password-Locker.py
 ## Testing the Application
    * To run the tests for the class file:
 
