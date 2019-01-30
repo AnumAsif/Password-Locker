@@ -88,12 +88,16 @@ def main():
         if short_code == 'ca':
             print("New User")
             print("-"*30)
+            while True:
+                print("Enter username ........")
+                username = input()
 
-            print("Enter username ........")
-            username = input()
-
-            print("Enter Password.........")
-            password= input()
+                print("Enter Password.........")
+                password= input()
+                if username == "" or password == "":
+                    print("username and password required to create an account" )
+                    continue
+                break    
             save_user(create_user(username,password))
             print('\n')
             print(f"Your account with username:{username} and password:{password} has been created")
@@ -113,7 +117,12 @@ def main():
                     if short_c_code == 'cc':
 
                         site_name = input("Enter the site name for which you want to create a credential: ")
-                        account_name = input("Enter username for the site: ")
+
+                        while True:
+                            account_name = input("Enter username for the site: ")
+                            if(account_name == ""):
+                                continue
+                            break
                         print("Do you want to autogenerate password. If yes, press 'Y' else press 'N'")
 
                         while True:
@@ -124,8 +133,14 @@ def main():
                                 break
 
                             elif answer == 'n':
-                                print("Enter the password for the account: ")
-                                accountPassword = input()
+                                while True:
+                                    print("Enter password of 10 characters: ")
+                                    accountPassword = input()
+
+                                    if accountPassword=="" or len(accountPassword)!=10:
+                                        print("Invalid Password! Password should be 10 character long:")
+                                        continue
+                                    break
                                 break
 
                             else:
